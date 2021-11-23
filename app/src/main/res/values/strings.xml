@@ -1,13 +1,17 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">AnneFlix</string>
+    <string name="next">Suivant</string>
+    <string name="previous">Précédent</string>
     <string name="hello_home_second">Hello HomeSecondFragment. Arg: %1$s</string>
     <string name="hello_dashboard_second">Hello DashboardSecondFragment. Arg: %1$s</string>
     <string name="hello_notifications_second">Hello NotificationsSecondFragment. Arg: %1$s</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Accueil</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">A propos de nous</string>
 
     <string name="home_second">Home Second</string>
+    <string name="description_projet">Dans ce projet, nous avons créer l\'application AnneFlix (The new Netflix). L\'objectif était d\'exploiter la base de données TheMoovieDB (https:\/\/developers.themoviedb.org\/3) afin de permettre aux utilisateurs de l\'application de visualiser, noter et voir la bande annonce des films de celle-ci.</string>
+    <string name="description_titre">Description :</string>
+    <string name="membre_titre">Membres du groupe :</string>
+    <string name="membre_projet">Nisserine  EZZAIMI \nTessir FAHMI ALI \nAdeline FEURTÉ \nPauline GHIRLANDA </string>
 </resources>
