@@ -35,6 +35,7 @@ class HomeSecondFragment : Fragment() {
                 viewLifecycleOwner,
                 Observer {
                     binding.movieList.adapter = MovieAdapter(it)
+
                 }
             )
             error.observe(
