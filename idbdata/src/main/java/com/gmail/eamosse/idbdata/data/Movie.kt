@@ -1,12 +1,18 @@
 package com.gmail.eamosse.idbdata.data
 
+// import com.gmail.eamosse.idbdata.api.response.MovieByCategorieResponse
+// import com.google.gson.annotations.SerializedName
+
 data class Movie(
-    val poster_path: String,
-    val overview: String,
-    val release_date: String,
-    val genre_ids: Int,
-    val id: Int,
-    val title: String,
-    val backdrop_path: String?,
-    val vote_average: Float
+    var id: Int,
+    var posterPath: String,
+    var backdropPath: String,
+    var title: String,
+    var voteCount: Int,
+    var voteAverage: Float,
+    var genreIds: List<Int>,
+    var originalLanguage: String = "",
+    var releaseDate: String?,
+    var runtime: Int?,
+    var overview: String?
 )

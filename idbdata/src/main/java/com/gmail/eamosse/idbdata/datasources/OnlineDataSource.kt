@@ -1,6 +1,6 @@
 package com.gmail.eamosse.idbdata.datasources
 
-import com.gmail.eamosse.idbdata.api.response.*
+import com.gmail.eamosse.idbdata.api.response.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.api.response.CategoryResponse
 import com.gmail.eamosse.idbdata.api.response.TokenResponse
 import com.gmail.eamosse.idbdata.api.response.parse
@@ -21,32 +21,14 @@ internal class OnlineDataSource(private val service: MovieService) {
      * Si [Result.Succes], tout s'est bien passé
      * Sinon, une erreur est survenue
      */
-//    suspend fun getToken(): Result<TokenResponse> {
-//        return try {
-//            val response = service.getToken()
-//            if (response.isSuccessful) {
-//                Result.Succes(response.body()!!)
-//            } else {
-//                Result.Error(
-//                    exception = Exception(),
-//                    message = response.message(),
-//                    code = response.code()
-//                )
-//            }
-//        } catch (e: Exception) {
-//            Result.Error(
-//                exception = e,
-//                message = e.message ?: "No message",
-//                code = -1
-//            )
-//        }
-//    }
+
     suspend fun getToken(): Result<TokenResponse> {
         return safeCall {
             val response = service.getToken()
             response.parse()
         }
     }
+
     suspend fun getCategories(): Result<List<CategoryResponse.Genre>> {
         return try {
             val response = service.getCategories()
@@ -68,12 +50,11 @@ internal class OnlineDataSource(private val service: MovieService) {
         }
     }
 
-    // ajouter
-    suspend fun getFilms(movie_genre: String): Result<List<FilmReponse.Movie>> {
+    suspend fun getMoviebyCategories(Id: String): Result<List<MoviesResponse.Movie>> {
         return try {
-            val response = service.getFilms(movie_genre)
+            val response = service.getMoviebyCategories(Id)
             if (response.isSuccessful) {
-                Result.Succes(response.body()!!.movies)
+                Result.Succes(response.body()!!.results)
             } else {
                 Result.Error(
                     exception = Exception(),
