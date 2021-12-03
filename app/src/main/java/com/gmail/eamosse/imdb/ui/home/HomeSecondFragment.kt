@@ -30,6 +30,7 @@ class HomeSecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(homeViewModel) {
             getMoviebyCategories(args.myArg)
+
             moviesbycategory.observe(
                 viewLifecycleOwner,
                 Observer {
