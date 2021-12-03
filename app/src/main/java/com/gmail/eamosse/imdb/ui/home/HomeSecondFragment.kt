@@ -20,8 +20,6 @@ class HomeSecondFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_home_second, container, false)
         binding = FragmentHomeSecondBinding.inflate(inflater, container, false)
         return binding.root
     }
