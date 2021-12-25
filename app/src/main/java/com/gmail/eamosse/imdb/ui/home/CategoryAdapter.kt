@@ -12,6 +12,7 @@ class CategoryAdapter(private val items: List<Category>) :
 
     inner class ViewHolder(private val binding: CategoryListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        val mCategoryImg = binding.categoryImg
         fun bind(item: Category) {
             binding.item = item
         }
@@ -26,7 +27,7 @@ class CategoryAdapter(private val items: List<Category>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
-        holder.itemView.setOnClickListener {
+        holder.mCategoryImg.setOnClickListener {
             val action =
                 HomeFragmentDirections.actionHomeFragmentToHomeSecondFragment(items[position].id.toString())
             findNavController(it).navigate(action)
