@@ -29,12 +29,11 @@ class DashboardFragment : Fragment() {
         with(dashboardViewModel) {
 
             getPopularMovies()
-
             popularmovies.observe(
                 viewLifecycleOwner,
                 Observer {
                     binding.popularList.adapter = DashboardAdapter(it)
-                    binding.topRatedList.adapter = DashboardAdapter(it)
+//                    binding.topRatedList.adapter = DashboardAdapter(it)
                 }
             )
             getTopRatedMovies()
@@ -44,6 +43,14 @@ class DashboardFragment : Fragment() {
                     binding.topRatedList.adapter = DashboardAdapter(it)
                 }
             )
+            getUpcomingMovies()
+            upcomingmovies.observe(
+                viewLifecycleOwner,
+                Observer {
+                    binding.upcomingList.adapter = DashboardAdapter(it)
+                }
+            )
+
 
             error.observe(
                 viewLifecycleOwner,
