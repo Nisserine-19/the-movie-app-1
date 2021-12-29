@@ -2,6 +2,7 @@ package com.gmail.eamosse.idbdata.api.service
 
 import com.gmail.eamosse.idbdata.api.response.CategoryResponse
 import com.gmail.eamosse.idbdata.api.response.MoviesResponse
+import com.gmail.eamosse.idbdata.api.response.PopularMoviesResponse
 import com.gmail.eamosse.idbdata.api.response.TokenResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -17,4 +18,7 @@ internal interface MovieService {
     // ajouter
     @GET("discover/movie")
     suspend fun getMoviebyCategories(@Query("with_genres") Id: String): Response<MoviesResponse>
+
+    @GET("movie/popular")
+    suspend fun getPopularMovies(@Query("page") page: Int): Response<PopularMoviesResponse>
 }

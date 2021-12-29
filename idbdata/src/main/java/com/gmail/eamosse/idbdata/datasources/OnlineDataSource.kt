@@ -70,4 +70,25 @@ internal class OnlineDataSource(private val service: MovieService) {
             )
         }
     }
+
+    suspend fun getPopularMovies(page: Int): Result<List<PopularMoviesResponse.Movies>> {
+        return try {
+            val response = service.getPopularMovies(page)
+            if (response.isSuccessful) {
+                Result.Succes(response.body()!!.movies)
+            } else {
+                Result.Error(
+                    exception = Exception(),
+                    message = response.message(),
+                    code = response.code()
+                )
+            }
+        } catch (e: Exception) {
+            Result.Error(
+                exception = e,
+                message = e.message ?: "No message",
+                code = -1
+            )
+        }
+    }
 }
