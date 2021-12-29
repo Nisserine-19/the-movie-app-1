@@ -20,5 +20,8 @@ internal interface MovieService {
     suspend fun getMoviebyCategories(@Query("with_genres") Id: String): Response<MoviesResponse>
 
     @GET("movie/popular")
-    suspend fun getPopularMovies(@Query("page") page: Int): Response<PopularMoviesResponse>
+    suspend fun getPopularMovies(): Response<PopularMoviesResponse>
+//    suspend fun getPopularMovies(@Query("page") page: Int): Response<PopularMoviesResponse>
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovies(): Response<PopularMoviesResponse>
 }

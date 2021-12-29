@@ -71,8 +71,35 @@ class MovieRepository : KoinComponent {
         }
     }
 
-    suspend fun getPopularMovies(page: Int): Result<List<PopularMovies>> {
-        return when (val result = online.getPopularMovies(page)) {
+//    suspend fun getPopularMovies(page: Int): Result<List<PopularMovies>> {
+//        return when (val result = online.getPopularMovies(page)) {
+//            is Result.Succes -> {
+//                // On utilise la fonction map pour convertir les catégories de la réponse serveur
+//                // en liste de categories d'objets de l'application
+//                val popularmovie = result.data.map {
+//                    it.toPopularMovies()
+//                }
+//                Result.Succes(popularmovie)
+//            }
+//            is Result.Error -> result
+//        }
+//    }
+    suspend fun getPopularMovies(): Result<List<PopularMovies>> {
+        return when (val result = online.getPopularMovies()) {
+            is Result.Succes -> {
+                // On utilise la fonction map pour convertir les catégories de la réponse serveur
+                // en liste de categories d'objets de l'application
+                val popularmovie = result.data.map {
+                    it.toPopularMovies()
+                }
+                Result.Succes(popularmovie)
+            }
+            is Result.Error -> result
+        }
+    }
+
+    suspend fun getTopRatedMovies(): Result<List<PopularMovies>> {
+        return when (val result = online.getTopRatedMovies()) {
             is Result.Succes -> {
                 // On utilise la fonction map pour convertir les catégories de la réponse serveur
                 // en liste de categories d'objets de l'application

@@ -16,13 +16,19 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
     val popularmovies: LiveData<List<PopularMovies>>
         get() = _popularmovies
 
+    private val _topratedmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
+    val topratedmovies: LiveData<List<PopularMovies>>
+       get()= _topratedmovies
+
+
+
     private val _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String>
         get() = _error
 
-    fun getPopularMovies(page: Int) {
+    fun getPopularMovies() {
         viewModelScope.launch(Dispatchers.IO) {
-            when (val result = repository.getPopularMovies(page)) {
+            when (val result = repository.getPopularMovies()) {
                 is Result.Succes -> {
                     _popularmovies.postValue(result.data)
                 }
@@ -32,4 +38,18 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
             }
         }
     }
+    fun getTopRatedMovies() {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getTopRatedMovies()) {
+                is Result.Succes -> {
+                    _topratedmovies.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
+        }
+    }
+
+
 }
