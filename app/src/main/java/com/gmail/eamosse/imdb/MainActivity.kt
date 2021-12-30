@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.gmail.eamosse.idbdata.repository.MovieRepository
+import com.gmail.eamosse.imdb.ui.home.Titlechange
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +18,7 @@ import org.koin.android.ext.android.inject
  * Activité principale de l'application
  * Ce sera la seule activité de l'application
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Titlechange {
 
     val repository: MovieRepository by inject()
 
@@ -48,6 +49,10 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         // Finalement, on lie la bottom bar et la nav controller
         navView.setupWithNavController(navController)
+    }
+
+    override fun updateTitle(title: String) {
+        supportActionBar?.title = title
     }
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp()

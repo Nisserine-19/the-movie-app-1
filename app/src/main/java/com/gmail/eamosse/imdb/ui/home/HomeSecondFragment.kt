@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
+import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeSecondBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,6 +22,7 @@ class HomeSecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeSecondBinding.inflate(inflater, container, false)
+        (activity as? Titlechange)?.updateTitle(getString(R.string.home_second, args.mytitle))
         return binding.root
     }
 
@@ -33,7 +35,6 @@ class HomeSecondFragment : Fragment() {
                 viewLifecycleOwner,
                 Observer {
                     binding.movieList.adapter = MovieAdapter(it)
-
                 }
             )
             error.observe(
@@ -51,4 +52,3 @@ class HomeSecondFragment : Fragment() {
 //            findNavController().navigate(R.id.action_HomeSecondFragment_to_HomeFragment)
 //        }
 }
-

@@ -7,12 +7,12 @@ import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-internal class LocalDataSource: KoinComponent {
+internal class LocalDataSource : KoinComponent {
     private val tokenDao: TokenDao by inject()
 
-    suspend fun getToken() = withContext(Dispatchers.IO) {
-        tokenDao.retrieve()
-    }
+//    suspend fun getToken() = withContext(Dispatchers.IO) {
+//        tokenDao.retrieve()
+//    }
 
     suspend fun saveToken(entity: TokenEntity) = withContext(Dispatchers.IO) {
         tokenDao.insert(entity)

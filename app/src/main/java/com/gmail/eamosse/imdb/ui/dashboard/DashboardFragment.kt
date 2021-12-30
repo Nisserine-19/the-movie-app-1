@@ -51,7 +51,6 @@ class DashboardFragment : Fragment() {
                 }
             )
 
-
             error.observe(
                 viewLifecycleOwner,
                 Observer {
