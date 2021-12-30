@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gmail.eamosse.idbdata.data.DetailMovie
 import com.gmail.eamosse.idbdata.data.PopularMovies
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.idbdata.utils.Result
@@ -18,13 +19,15 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
 
     private val _topratedmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
     val topratedmovies: LiveData<List<PopularMovies>>
-       get()= _topratedmovies
+        get() = _topratedmovies
 
     private val _upcomingmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
     val upcomingmovies: LiveData<List<PopularMovies>>
-        get()= _upcomingmovies
+        get() = _upcomingmovies
 
-
+    private val _moviedetail: MutableLiveData<DetailMovie> = MutableLiveData()
+    val movieDetail: LiveData<DetailMovie>
+        get() = _moviedetail
 
     private val _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String>
@@ -42,6 +45,7 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
             }
         }
     }
+
     fun getTopRatedMovies() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val result = repository.getTopRatedMovies()) {
@@ -68,5 +72,16 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
         }
     }
 
-
+    fun getDetailMovie(Id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getDetailMovie(Id)) {
+                is Result.Succes -> {
+                    _moviedetail.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
+        }
+    }
 }

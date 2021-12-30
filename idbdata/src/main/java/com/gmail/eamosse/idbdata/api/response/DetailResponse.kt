@@ -23,7 +23,10 @@ internal data class DetailResponse(
     val poster_path: String,
 
     @SerializedName("backdrop_path")
-    val backdrop_path: String
+    val backdrop_path: String,
+
+    @SerializedName("vote_average")
+    val vote_average: Int
 )
 
 internal fun DetailResponse.toDetailMovie() = DetailMovie(
@@ -33,5 +36,6 @@ internal fun DetailResponse.toDetailMovie() = DetailMovie(
     video = video,
     date = date,
     poster_path = poster_path,
-    backdrop_path = backdrop_path
+    backdrop_path = backdrop_path,
+    vote_average = vote_average
 )

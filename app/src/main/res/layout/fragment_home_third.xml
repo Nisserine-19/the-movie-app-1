@@ -98,6 +98,15 @@
             app:layout_constraintStart_toStartOf="@id/vue_font"
             app:layout_constraintTop_toBottomOf="@id/vue_font"/>
 
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="380dp"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toBottomOf="@id/resume"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />h
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,6 @@
     <fragment
         android:id="@+id/navigation_home_third"
         android:name="com.gmail.eamosse.imdb.ui.home.HomeThirdFragment"
-        android:label="@string/home_third"
         tools:layout="@layout/fragment_home_third">
         <action
             android:id="@+id/action_HomeSecondFragment_to_HomeThirdFragment"
@@ -50,7 +49,14 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.gmail.eamosse.imdb.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_DashboardFragment_to_HomeThirdFragment"
+            app:destination="@id/navigation_home_third" />
+        <argument
+            android:name="idmovie"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"

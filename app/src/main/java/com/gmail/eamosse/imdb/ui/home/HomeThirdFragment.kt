@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeThirdBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -35,11 +36,19 @@ class HomeThirdFragment : Fragment() {
                 { itmovie ->
                     binding.titre.text = itmovie.title
                     binding.resume.text = itmovie.overview
+                    binding.dateSortie.text = itmovie.date
+                    binding.rang.rating = itmovie.vote_average.toFloat() / 2
                     context?.let { it1 ->
                         Glide.with(it1)
                             .load("https://image.tmdb.org/t/p/w500" + itmovie.poster_path)
                             .into(binding.imageFilm)
                     }
+                    context?.let { it1 ->
+                        Glide.with(it1)
+                            .load("https://image.tmdb.org/t/p/w500" + itmovie.backdrop_path)
+                            .into(binding.fontFilm)
+                    }
+                    (activity as? Titlechange)?.updateTitle(getString(R.string.home_third, binding.titre.text))
                     error.observe(
                         viewLifecycleOwner,
                         {

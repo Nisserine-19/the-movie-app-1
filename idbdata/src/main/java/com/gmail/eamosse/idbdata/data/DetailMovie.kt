@@ -7,5 +7,6 @@ class DetailMovie (
     var video: Boolean,
     var date: String,
     var poster_path: String,
-    var backdrop_path: String
+    var backdrop_path: String,
+    var vote_average: Int
 )
