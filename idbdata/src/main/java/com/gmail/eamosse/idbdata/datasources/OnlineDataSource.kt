@@ -91,6 +91,7 @@ internal class OnlineDataSource(private val service: MovieService) {
             )
         }
     }
+
     suspend fun getTopRatedMovies(): Result<List<PopularMoviesResponse.Movies>> {
         return try {
             val response = service.getTopRatedMovies()
@@ -117,6 +118,27 @@ internal class OnlineDataSource(private val service: MovieService) {
             val response = service.getUpcomingMovies()
             if (response.isSuccessful) {
                 Result.Succes(response.body()!!.movies)
+            } else {
+                Result.Error(
+                    exception = Exception(),
+                    message = response.message(),
+                    code = response.code()
+                )
+            }
+        } catch (e: Exception) {
+            Result.Error(
+                exception = e,
+                message = e.message ?: "No message",
+                code = -1
+            )
+        }
+    }
+
+    suspend fun getDetailMovie(Id: Int): Result<DetailResponse> {
+        return try {
+            val response = service.getDetailMovie(Id)
+            if (response.isSuccessful) {
+                Result.Succes(response.body()!!)
             } else {
                 Result.Error(
                     exception = Exception(),

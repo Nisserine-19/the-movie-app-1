@@ -1,5 +1,6 @@
 package com.gmail.eamosse.imdb
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.repository.MovieRepository
-import com.gmail.eamosse.imdb.ui.home.Titlechange
+import com.gmail.eamosse.imdb.ui.home.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -19,7 +21,6 @@ import org.koin.android.ext.android.inject
  * Ce sera la seule activité de l'application
  */
 class MainActivity : AppCompatActivity(), Titlechange {
-
     val repository: MovieRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -14,7 +14,8 @@
     <string name="stay_updated">Stay updated with the latest movies</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">A Propos de Nous</string>
-    <string name="home_second"> %1$s</string>
+    <string name="home_second">%1$s</string>
+    <string name="home_third">%1$s</string>
     <string name="notre_quipe">Notre équipe:</string>
     <string name="nisserine_ezzaimi">Nisserine EZZAIMI</string>
     <string name="tessir_fahmi_ali">Tessir FAHMI ALI</string>
@@ -28,4 +29,6 @@
     <string name="fonction2">Affichage des catégories de film</string>
     <string name="fonction3">Affichage des films par catégorie</string>
     <string name="fonction5">Cette vue \'A propos de nous\'</string>
+    <string name="image_du_film">Image du film</string>
+    <string name="image_de_font_du_film">Image de font du film</string>
 </resources>
