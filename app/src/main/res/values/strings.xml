@@ -31,4 +31,9 @@
     <string name="image_du_film">Image du film</string>
     <string name="image_de_font_du_film">Image de font du film</string>
     <string name="home_third">%1$s</string>
+    <string name="dashboard_second">%1$s</string>
+    <string name="title_dashboard_second">%1$s</string>
+    <string name="fonction4">Affichage du détail des films</string>
+    <string name="text_category">Actions et Aventures</string>
+    <string name="text_film_recycler">Actions et Aventures Actions et Aventures Actions et Aventures</string>
 </resources>

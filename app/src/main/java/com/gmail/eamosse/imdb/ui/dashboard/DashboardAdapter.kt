@@ -36,7 +36,7 @@ class DashboardAdapter(private val items: List<PopularMovies>) :
 
         holder.itemView.setOnClickListener {
             val action =
-                DashboardFragmentDirections.actionDashboardFragmentToHomeThirdFragment(items[position].id.toString())
+                DashboardFragmentDirections.actionDashboardFragmentToDashboardSecondFragment(items[position].id.toString())
             Navigation.findNavController(it).navigate(action)
         }
     }

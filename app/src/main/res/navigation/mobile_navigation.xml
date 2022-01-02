@@ -49,10 +49,22 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.gmail.eamosse.imdb.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
-            android:id="@+id/action_DashboardFragment_to_HomeThirdFragment"
-            app:destination="@id/navigation_home_third" />
+            android:id="@+id/action_DashboardFragment_to_DashboardSecondFragment"
+            app:destination="@id/navigation_dashboard_second" />
+        <argument
+            android:name="idmovie"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard_second"
+        android:name="com.gmail.eamosse.imdb.ui.dashboard.DashboardSecondFragment"
+        android:label="@string/title_dashboard_second"
+        tools:layout="@layout/fragment_dashboard_second">
+        <action
+            android:id="@+id/action_DashboardSecondFragment_to_DashboardFragment"
+            app:destination="@id/navigation_dashboard" />
         <argument
             android:name="idmovie"
             app:argType="string" />

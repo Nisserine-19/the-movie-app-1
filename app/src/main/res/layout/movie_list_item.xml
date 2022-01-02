@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="@id/movie_img"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
-            tools:text="Actions et Aventures Actions et Aventures Actions et Aventures" />
+            tools:text="@string/text_film_recycler" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
