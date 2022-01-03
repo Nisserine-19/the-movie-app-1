@@ -6,6 +6,7 @@ import com.gmail.eamosse.idbdata.BuildConfig
 import com.gmail.eamosse.idbdata.api.service.MovieService
 import com.gmail.eamosse.idbdata.datasources.LocalDataSource
 import com.gmail.eamosse.idbdata.datasources.OnlineDataSource
+import com.gmail.eamosse.idbdata.local.daos.FavoriteDao
 import com.gmail.eamosse.idbdata.local.daos.TokenDao
 import com.gmail.eamosse.idbdata.local.databases.IdbDataBase
 import com.gmail.eamosse.idbdata.repository.MovieRepository
@@ -54,6 +55,9 @@ val dataModule = module {
     single {
         DatabaseConfig.getTokenDao(get())
     }
+    single {
+        DatabaseConfig.getFavoriteDao(get())
+    }
 }
 
 private object DatabaseConfig {
@@ -65,6 +69,7 @@ private object DatabaseConfig {
     }
 
     fun getTokenDao(db: IdbDataBase): TokenDao = db.tokenDao()
+    fun getFavoriteDao(db: IdbDataBase): FavoriteDao = db.getFavoriteMovieDao()
 }
 
 private object NetworkXConfig {
