@@ -8,8 +8,10 @@ import com.gmail.eamosse.idbdata.data.Category
 import com.gmail.eamosse.idbdata.data.DetailMovie
 import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.data.Token
+import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.idbdata.utils.Result
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -99,6 +101,29 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
                     _error.postValue(result.message)
                 }
             }
+        }
+    }
+    fun addToFavorite(movie: DetailMovie) {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.addToFavorite(
+                FavoriteEntity(
+                    movie.id.toString(),
+                    movie.backdrop_path,
+                    movie.title,
+                    movie.overview,
+                    movie.poster_path,
+                    movie.video,
+                    movie.date
+                )
+            )
+        }
+    }
+
+    suspend fun checkMovie(id: String) = repository.checkMovie(id)
+
+    fun removeFromFavorite(id: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.removeFromFavorite(id)
         }
     }
 }

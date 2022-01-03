@@ -75,4 +75,9 @@
         android:name="com.gmail.eamosse.imdb.ui.notifications.aProposFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.gmail.eamosse.imdb.ui.favoris.FavorisFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favoris" />
 </navigation>

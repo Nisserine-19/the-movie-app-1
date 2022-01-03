@@ -36,4 +36,5 @@
     <string name="fonction4">Affichage du détail des films</string>
     <string name="text_category">Actions et Aventures</string>
     <string name="text_film_recycler">Actions et Aventures Actions et Aventures Actions et Aventures</string>
+    <string name="favorite">Favoris</string>
 </resources>

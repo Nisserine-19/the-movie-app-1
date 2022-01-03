@@ -9,6 +9,10 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeThirdBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeThirdFragment : Fragment() {
@@ -42,6 +46,28 @@ class HomeThirdFragment : Fragment() {
                         Glide.with(it1)
                             .load("https://image.tmdb.org/t/p/w500" + itmovie.poster_path)
                             .into(binding.imageFilm)
+                    }
+                    var _isChecked = false
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val count = checkMovie(itmovie.id.toString())
+                        withContext(Dispatchers.Main) {
+                            if (count > 0) {
+                                binding.toggleFavorite.isChecked = true
+                                _isChecked = true
+                            } else {
+                                binding.toggleFavorite.isChecked = false
+                                _isChecked = false
+                            }
+                        }
+                    }
+                    binding.toggleFavorite.setOnClickListener {
+                        _isChecked = !_isChecked
+                        if (_isChecked) {
+                            addToFavorite(itmovie)
+                        } else {
+                            removeFromFavorite(itmovie.id.toString())
+                        }
+                        binding.toggleFavorite.isChecked = _isChecked
                     }
                     context?.let { it1 ->
                         Glide.with(it1)
