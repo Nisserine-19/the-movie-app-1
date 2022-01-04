@@ -46,7 +46,7 @@ class DashboardSecondFragment : Fragment() {
                     }
                     context?.let { it1 ->
                         Glide.with(it1)
-                            .load("https://image.tmdb.org/t/p/w500" + itmovie.backdrop_path)
+                            .load("https://image.tmdb.org/t/p/w1280" + itmovie.backdrop_path)
                             .into(binding.fontFilm)
                     }
                     (activity as? Titlechange)?.updateTitle(
