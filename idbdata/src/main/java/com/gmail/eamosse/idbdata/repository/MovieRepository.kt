@@ -1,11 +1,11 @@
 package com.gmail.eamosse.idbdata.repository
 
-import com.gmail.eamosse.idbdata.api.response.*
+import com.gmail.eamosse.idbdata.api.response.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.api.response.toCategory
 import com.gmail.eamosse.idbdata.api.response.toEntity
 import com.gmail.eamosse.idbdata.api.response.toMovie
 import com.gmail.eamosse.idbdata.api.response.toToken
-import com.gmail.eamosse.idbdata.data.*
+import com.gmail.eamosse.idbdata.data.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.datasources.LocalDataSource
 import com.gmail.eamosse.idbdata.datasources.OnlineDataSource
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
@@ -69,7 +69,7 @@ class MovieRepository : KoinComponent {
         }
     }
 
-//    suspend fun getPopularMovies(page: Int): Result<List<PopularMovies>> {
+    //    suspend fun getPopularMovies(page: Int): Result<List<PopularMovies>> {
 //        return when (val result = online.getPopularMovies(page)) {
 //            is Result.Succes -> {
 //                // On utilise la fonction map pour convertir les catégories de la réponse serveur
@@ -99,8 +99,6 @@ class MovieRepository : KoinComponent {
     suspend fun getTopRatedMovies(): Result<List<PopularMovies>> {
         return when (val result = online.getTopRatedMovies()) {
             is Result.Succes -> {
-                // On utilise la fonction map pour convertir les catégories de la réponse serveur
-                // en liste de categories d'objets de l'application
                 val popularmovie = result.data.map {
                     it.toPopularMovies()
                 }
@@ -113,8 +111,6 @@ class MovieRepository : KoinComponent {
     suspend fun getUpcomingMovies(): Result<List<PopularMovies>> {
         return when (val result = online.getUpcomingMovies()) {
             is Result.Succes -> {
-                // On utilise la fonction map pour convertir les catégories de la réponse serveur
-                // en liste de categories d'objets de l'application
                 val popularmovie = result.data.map {
                     it.toPopularMovies()
                 }
@@ -133,11 +129,14 @@ class MovieRepository : KoinComponent {
             is Result.Error -> result
         }
     }
+
     suspend fun getFavoritesMovies(): List<FavoriteEntity> {
         return local.getFavoritesMovies()
     }
+
     suspend fun addToFavorite(favoriteMovie: FavoriteEntity) =
         local.addToFavorite(favoriteMovie)
+
     suspend fun checkMovie(id: String) = local.checkMovie(id)
     suspend fun removeFromFavorite(id: String) {
         local.removeFromFavorite(id)

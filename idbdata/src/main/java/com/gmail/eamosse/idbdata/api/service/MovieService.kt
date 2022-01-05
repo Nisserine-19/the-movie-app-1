@@ -1,6 +1,6 @@
 package com.gmail.eamosse.idbdata.api.service
 
-import com.gmail.eamosse.idbdata.api.response.*
+import com.gmail.eamosse.idbdata.api.response.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.api.response.CategoryResponse
 import com.gmail.eamosse.idbdata.api.response.DetailResponse
 import com.gmail.eamosse.idbdata.api.response.TokenResponse
@@ -22,7 +22,6 @@ internal interface MovieService {
 
     @GET("movie/popular")
     suspend fun getPopularMovies(): Response<PopularMoviesResponse>
-//    suspend fun getPopularMovies(@Query("page") page: Int): Response<PopularMoviesResponse>
 
     @GET("movie/top_rated")
     suspend fun getTopRatedMovies(): Response<PopularMoviesResponse>
