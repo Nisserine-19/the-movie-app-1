@@ -37,4 +37,6 @@
     <string name="text_category">Actions et Aventures</string>
     <string name="text_film_recycler">Actions et Aventures Actions et Aventures Actions et Aventures</string>
     <string name="favorite">Favoris</string>
+    <string name="similar">Similar</string>
+    <string name="similar_movies">Similar movies</string>
 </resources>

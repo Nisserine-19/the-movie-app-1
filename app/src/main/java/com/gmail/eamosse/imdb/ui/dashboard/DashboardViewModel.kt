@@ -35,6 +35,10 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
     val error: LiveData<String>
         get() = _error
 
+    private val _similarmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
+    val similarmovies: LiveData<List<PopularMovies>>
+        get() = _similarmovies
+
     fun getPopularMovies() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val result = repository.getPopularMovies()) {
@@ -108,6 +112,19 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
     fun removeFromFavorite(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.removeFromFavorite(id)
+        }
+    }
+
+    fun getSimilarMovies(Id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getSimilarMovies(Id)) {
+                is Result.Succes -> {
+                    _similarmovies.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
         }
     }
 }

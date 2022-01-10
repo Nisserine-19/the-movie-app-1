@@ -34,6 +34,14 @@ class DashboardSecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(dashboardViewModel) {
+            getSimilarMovies(args.idmovie.toInt())
+            similarmovies.observe(
+                viewLifecycleOwner,
+                {
+                    binding.similarList.adapter = DashboardAdapter(it)
+                }
+            )
+
             // récupérer les catégories
             getDetailMovie(args.idmovie.toInt())
             movieDetail.observe(

@@ -109,14 +109,52 @@
                 app:layout_constraintStart_toStartOf="@id/vue_font"
                 app:layout_constraintTop_toBottomOf="@id/vue_font"/>
 
-            <VideoView
-                android:id="@+id/video"
-                android:layout_width="380dp"
-                android:layout_height="120dp"
+            <TextView
+                android:id="@+id/similar_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/similar"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/resume"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 />
+
+            <TextView
+                android:id="@+id/similar_txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/similar_movies"
+                app:layout_constraintTop_toBottomOf="@id/similar_txt"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/similar_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/similar_txt2"
+                tools:listitem="@layout/similar_list_item" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/top_rated"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

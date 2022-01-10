@@ -138,7 +138,22 @@ class MovieRepository : KoinComponent {
         local.addToFavorite(favoriteMovie)
 
     suspend fun checkMovie(id: String) = local.checkMovie(id)
+
     suspend fun removeFromFavorite(id: String) {
         local.removeFromFavorite(id)
+    }
+
+    suspend fun getSimilarMovies(Id: Int): Result<List<PopularMovies>> {
+        return when (val result = online.getSimilarMovies(Id)) {
+            is Result.Succes -> {
+                // On utilise la fonction map pour convertir les catégories de la réponse serveur
+                // en liste de categories d'objets de l'application
+                val similarmovie = result.data.map {
+                    it.toPopularMovies()
+                }
+                Result.Succes(similarmovie)
+            }
+            is Result.Error -> result
+        }
     }
 }
