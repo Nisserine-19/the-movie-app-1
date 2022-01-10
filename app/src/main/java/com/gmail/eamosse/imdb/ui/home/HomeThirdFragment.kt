@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeThirdBinding
+import com.gmail.eamosse.imdb.ui.dashboard.DashboardAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,6 +34,14 @@ class HomeThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(homeViewModel) {
+            getSimilarMovies(args.idmovie.toInt())
+            similarmovies.observe(
+                viewLifecycleOwner,
+                {
+                    binding.similarList.adapter = DashboardAdapter(it)
+                }
+            )
+
             // récupérer les catégories
             getDetailMovie(args.idmovie.toInt())
             movieDetail.observe(
@@ -74,7 +83,12 @@ class HomeThirdFragment : Fragment() {
                             .load("https://image.tmdb.org/t/p/w1280" + itmovie.backdrop_path)
                             .into(binding.fontFilm)
                     }
-                    (activity as? Titlechange)?.updateTitle(getString(R.string.home_third, binding.titre.text))
+                    (activity as? Titlechange)?.updateTitle(
+                        getString(
+                            R.string.home_third,
+                            binding.titre.text
+                        )
+                    )
                     error.observe(
                         viewLifecycleOwner,
                         {

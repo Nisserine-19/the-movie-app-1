@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gmail.eamosse.idbdata.data.Category
-import com.gmail.eamosse.idbdata.data.DetailMovie
-import com.gmail.eamosse.idbdata.data.Movie
-import com.gmail.eamosse.idbdata.data.Token
+import com.gmail.eamosse.idbdata.data.*
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.idbdata.utils.Result
@@ -39,6 +36,10 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
     private val _moviedetail: MutableLiveData<DetailMovie> = MutableLiveData()
     val movieDetail: LiveData<DetailMovie>
         get() = _moviedetail
+
+    private val _similarmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
+    val similarmovies: LiveData<List<PopularMovies>>
+        get() = _similarmovies
 
     /**
      * Block d'initialisation du viewmodel
@@ -124,6 +125,19 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
     fun removeFromFavorite(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.removeFromFavorite(id)
+        }
+    }
+
+    fun getSimilarMovies(Id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getSimilarMovies(Id)) {
+                is Result.Succes -> {
+                    _similarmovies.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
         }
     }
 }
