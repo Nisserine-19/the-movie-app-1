@@ -31,7 +31,7 @@ class FavorisAdapter : RecyclerView.Adapter<FavorisAdapter.ViewHolder>() {
             with(binding) {
 
                 Glide.with(itemView)
-                    .load("${favoriteMovie.baseUrl}${favoriteMovie.poster_path}")
+                    .load("${favoriteMovie.baseUrl}${favoriteMovie.backdroppath}")
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_error)

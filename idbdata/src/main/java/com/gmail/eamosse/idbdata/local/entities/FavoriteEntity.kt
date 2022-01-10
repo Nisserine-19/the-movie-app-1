@@ -19,7 +19,7 @@ data class FavoriteEntity(
 ) : Serializable, Parcelable {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
-    val baseUrl get() = "https://image.tmdb.org/t/p/w500"
+    val baseUrl get() = "https://image.tmdb.org/t/p/w1280"
 }
 
 // fun FavoriteEntity.toDetailMovie() = DetailMovie(
