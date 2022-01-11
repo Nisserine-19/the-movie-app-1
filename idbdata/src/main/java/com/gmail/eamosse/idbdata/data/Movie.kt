@@ -6,7 +6,7 @@ package com.gmail.eamosse.idbdata.data
 data class Movie(
     var id: Int,
     var posterPath: String,
-    var backdropPath: String ?,
+    var backdropPath: String?,
     val video: Boolean,
     var title: String,
     var releaseDate: String,

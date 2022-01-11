@@ -5,32 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+// import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+// import androidx.navigation.fragment.navArgs
 import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.imdb.databinding.FragmentFavorisBinding
-import com.gmail.eamosse.imdb.ui.home.HomeThirdFragmentArgs
-import com.gmail.eamosse.imdb.ui.home.HomeViewModel
+// import com.gmail.eamosse.imdb.ui.home.HomeThirdFragmentArgs
+// import com.gmail.eamosse.imdb.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavorisFragment : Fragment() {
     private val favorisViewModel: FavorisViewModel by viewModel()
-    private val args: HomeThirdFragmentArgs by navArgs()
+//    private val args: HomeThirdFragmentArgs by navArgs()
     private lateinit var binding: FragmentFavorisBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFavorisBinding.inflate(inflater, container, false)
         val adapter = FavorisAdapter()
         with(favorisViewModel) {
             getFavorites()
             favorites.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     adapter.setMovieList(it)
                     binding.apply {
                         rvMovie.setHasFixedSize(true)
@@ -50,7 +50,8 @@ class FavorisFragment : Fragment() {
                     favoriteMovie.release_date,
                     favoriteMovie.overview
                 )
-                val action = FavorisFragmentDirections.actionFavorisToHomeThirdFragment(movie.id.toString())
+                val action =
+                    FavorisFragmentDirections.actionFavorisToHomeThirdFragment(movie.id.toString())
                 findNavController().navigate(action)
             }
         })

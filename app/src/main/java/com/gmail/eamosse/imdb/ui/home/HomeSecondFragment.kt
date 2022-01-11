@@ -33,13 +33,13 @@ class HomeSecondFragment : Fragment() {
 
             moviesbycategory.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     binding.movieList.adapter = MovieAdapter(it)
                 }
             )
             error.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     // afficher l'erreur
                 }
             )

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gmail.eamosse.idbdata.data.*
+import com.gmail.eamosse.idbdata.data.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.idbdata.utils.Result
@@ -46,14 +46,14 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
      * On en profite (pour l'instant) pour récupérer le token utilisateur
      */
     init {
-        /**
-         * getToken est une méthode suspendue, par conséquent elle doit être appelée dans une coroutine
-         * De plus, le repository accède à une source de données (API ou BDD); il faut appeler la méthode
-         * dans un thread secondaire
-         *
-         * On utilise l'attribut viewModelScope qui est une coroutine lié au cycle de vie du VM
-         * Puis on exécute la méthode getToken dans un [Dispatchers.IO], soit dans un thread secondaire
-         */
+//        /**
+//         * getToken est une méthode suspendue, par conséquent elle doit être appelée dans une coroutine
+//         * De plus, le repository accède à une source de données (API ou BDD); il faut appeler la méthode
+//         * dans un thread secondaire
+//         *
+//         * On utilise l'attribut viewModelScope qui est une coroutine lié au cycle de vie du VM
+//         * Puis on exécute la méthode getToken dans un [Dispatchers.IO], soit dans un thread secondaire
+//         */
         viewModelScope.launch(Dispatchers.IO) {
             when (val result = repository.getToken()) {
                 is Result.Succes -> {

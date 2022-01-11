@@ -1,5 +1,6 @@
 package com.gmail.eamosse.imdb.ui.favoris
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ class FavorisAdapter : RecyclerView.Adapter<FavorisAdapter.ViewHolder>() {
         this.onItemClickCallback = onItemClickCallback
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setMovieList(list: List<FavoriteEntity>) {
         this.list = list
         notifyDataSetChanged()

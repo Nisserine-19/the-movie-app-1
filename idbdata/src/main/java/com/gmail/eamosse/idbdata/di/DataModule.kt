@@ -91,7 +91,6 @@ private object NetworkXConfig {
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .build()
-
     }
 }
 
