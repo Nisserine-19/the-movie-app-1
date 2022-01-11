@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_HomeSecondFragment_to_HomeThirdFragment"
             app:destination="@id/navigation_home_second" />
+        <action
+            android:id="@+id/action_DashboardFragment_to_DashboardSecondFragment"
+            app:destination="@id/navigation_dashboard_second" />
         <argument
             android:name="idmovie"
             app:argType="string" />
@@ -65,6 +68,9 @@
         <action
             android:id="@+id/action_DashboardSecondFragment_to_DashboardFragment"
             app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_DashboardFragment_to_DashboardSecondFragment"
+            app:destination="@id/navigation_dashboard_second" />
         <argument
             android:name="idmovie"
             app:argType="string" />
