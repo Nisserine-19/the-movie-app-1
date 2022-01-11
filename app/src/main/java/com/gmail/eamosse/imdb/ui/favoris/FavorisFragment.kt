@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
@@ -49,8 +50,8 @@ class FavorisFragment : Fragment() {
                     favoriteMovie.release_date,
                     favoriteMovie.overview
                 )
-//                val action = FavoriteFragmentDirections.actionNavFavoriteToNavDetails(movie)
-//                findNavController().navigate(action)
+                val action = FavorisFragmentDirections.actionFavorisToHomeThirdFragment(movie.id.toString())
+                findNavController().navigate(action)
             }
         })
         return binding.root

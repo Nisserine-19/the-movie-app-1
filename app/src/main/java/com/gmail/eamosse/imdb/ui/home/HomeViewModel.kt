@@ -104,6 +104,7 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
             }
         }
     }
+
     fun addToFavorite(movie: DetailMovie) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.addToFavorite(

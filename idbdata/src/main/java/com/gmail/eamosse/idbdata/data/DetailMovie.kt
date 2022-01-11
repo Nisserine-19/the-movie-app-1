@@ -1,12 +1,12 @@
 package com.gmail.eamosse.idbdata.data
 
-class DetailMovie (
-    var id: Int,
-    var title: String,
-    var overview: String,
-    var video: Boolean,
-    var date: String,
-    var poster_path: String,
-    var backdrop_path: String,
-    var vote_average: Int
+data class DetailMovie(
+    val id: Int,
+    val title: String,
+    val overview: String?,
+    val video: Boolean,
+    val date: String,
+    val poster_path: String,
+    val backdrop_path: String?,
+    val vote_average: Number
 )

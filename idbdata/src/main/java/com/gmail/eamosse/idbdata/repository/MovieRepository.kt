@@ -123,6 +123,8 @@ class MovieRepository : KoinComponent {
     suspend fun getDetailMovie(Id: Int): Result<DetailMovie> {
         return when (val result = online.getDetailMovie(Id)) {
             is Result.Succes -> {
+                // On utilise la fonction map pour convertir les catégories de la réponse serveur
+                // en liste de categories d'objets de l'application
                 val categories = result.data.toDetailMovie()
                 Result.Succes(categories)
             }
