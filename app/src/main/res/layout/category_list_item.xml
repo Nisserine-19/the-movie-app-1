@@ -14,7 +14,7 @@
         android:layout_marginEnd="2dp"
         android:layout_marginStart="2dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/category_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundimageView"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/category_name"
@@ -36,6 +38,6 @@
             app:layout_constraintEnd_toEndOf="@id/category_img"
             app:layout_constraintStart_toStartOf="@id/category_img"
             app:layout_constraintTop_toTopOf="@id/category_img"
-            tools:text="Actions et Aventures" />
+            tools:text="@string/text_category" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

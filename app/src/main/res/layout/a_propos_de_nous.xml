@@ -13,22 +13,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:textColor="#83ea96"
-                android:text="Notre équipe:"
-                android:textSize="25dp"
+                android:text="@string/notre_quipe"
+                android:textSize="25sp"
                 android:textStyle="bold">
-
             </TextView>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,8 +36,8 @@
                     android:id="@+id/Nisserine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Nisserine EZZAIMI"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/nisserine_ezzaimi"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +46,7 @@
 
                 <ImageView
                     android:id="@+id/photoNisserine"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -57,7 +54,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:src="@mipmap/ic_launcher_round" />
+                    android:src="@mipmap/ic_launcher_round"
+                    android:contentDescription="@string/nisserine_ezzaimi" />
             </LinearLayout>
 
 
@@ -72,8 +70,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Tessir FAHMI ALI"
-                    android:layout_marginLeft="20dp"
+                    android:text="@string/tessir_fahmi_ali"
+                    android:layout_marginStart="20dp"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -81,16 +79,17 @@
 
                 <ImageView
                     android:id="@+id/photoTessir"
-                    android:layout_width="220dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:src="@mipmap/ic_launcher_round"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/tessir_fahmi_ali" />
             </LinearLayout>
 
             <LinearLayout
@@ -104,8 +103,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Pauline GHIRLANDA"
-                    android:layout_marginLeft="20dp"
+                    android:text="@string/pauline_ghirlanda"
+                    android:layout_marginStart="20dp"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -113,11 +112,12 @@
 
                 <ImageView
                     android:id="@+id/photoPauline"
-                    android:layout_width="300dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@null"
+                    android:contentDescription="@string/pauline_ghirlanda"
                     android:src="@mipmap/ic_launcher_round"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -135,8 +135,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Adeline FEURTÉ"
-                    android:layout_marginLeft="20dp"
+                    android:text="@string/adeline_feurte"
+                    android:layout_marginStart="20dp"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -144,16 +144,17 @@
 
                 <ImageView
                     android:id="@+id/photoAdeline"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginLeft="27dp"
+                    android:layout_marginStart="27dp"
                     android:background="@null"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:src="@mipmap/ic_launcher_round" />
+                    android:src="@mipmap/ic_launcher_round"
+                    android:contentDescription="@string/adeline_feurte" />
             </LinearLayout>
 
 
@@ -161,11 +162,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:textColor="#83ea96"
-                android:text="Lien github de notre projet"
-                android:textSize="18dp"
+                android:text="@string/lien_github"
+                android:textSize="18sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -173,9 +174,9 @@
                 android:id="@+id/liengithub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="30dp"
-                android:text="https://github.com/Nisserine-19/the-movie-app-1.git"
+                android:text="@string/lien_git"
                 android:textSize="16sp"
                 android:contextClickable="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -185,11 +186,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:textColor="#83ea96"
-                android:text="Base de donnée utilisée pour l'application AnneFlix :"
-                android:textSize="18dp"
+                android:text="@string/resumeapp"
+                android:textSize="18sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -198,20 +199,20 @@
                 android:id="@+id/librairies2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TheMovieDB"
+                android:text="@string/themoviedbname"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:textColor="#83ea96"
-                android:text="La liste des fonctionnalités de notre application :"
-                android:textSize="15dp"
+                android:text="@string/fonctionapp"
+                android:textSize="15sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -220,9 +221,9 @@
                 android:id="@+id/fonctionnalite1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Affichage des catégories de film"
+                android:text="@string/fonction2"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -230,9 +231,19 @@
                 android:id="@+id/fonctionnalite2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Affichage des films par catégorie"
+                android:text="@string/fonction3"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/fonctionnalite3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fonction4"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -240,9 +251,9 @@
                 android:id="@+id/fonctionnalite5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cette vue 'A propos de nous'"
+                android:text="@string/fonction5"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginBottom="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

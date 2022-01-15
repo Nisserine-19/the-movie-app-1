@@ -1,13 +1,42 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name"> AnneFlix </string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="hello_home_second">Hello HomeSecondFragment. Arg: %1$s</string>
     <string name="hello_dashboard_second">Hello DashboardSecondFragment. Arg: %1$s</string>
     <string name="hello_notifications_second">Hello NotificationsSecondFragment. Arg: %1$s</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="popular">Popular</string>
+    <string name="most_popular_movies">Most popular movies</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="highest_rated_movies">Highest rated movies of all time</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="stay_updated">Stay updated with the latest movies</string>
+    <string name="title_dashboard">Discover</string>
     <string name="title_notifications">A Propos de Nous</string>
-
-    <string name="home_second">Home Second</string>
+    <string name="home_second">%1$s</string>
+    <string name="notre_quipe">Notre équipe:</string>
+    <string name="nisserine_ezzaimi">Nisserine EZZAIMI</string>
+    <string name="tessir_fahmi_ali">Tessir FAHMI ALI</string>
+    <string name="pauline_ghirlanda">Pauline GHIRLANDA</string>
+    <string name="adeline_feurte">Adeline FEURTÉ</string>
+    <string name="lien_github">Lien github de notre projet</string>
+    <string name="lien_git">https://github.com/Nisserine-19/the-movie-app-1.git</string>
+    <string name="resumeapp">Base de donnée utilisée pour l\'application AnneFlix :</string>
+    <string name="themoviedbname">TheMovieDB</string>
+    <string name="fonctionapp">La liste des fonctionnalités de notre application :</string>
+    <string name="fonction2">Affichage des catégories de film</string>
+    <string name="fonction3">Affichage des films par catégorie</string>
+    <string name="fonction5">Cette vue \'A propos de nous\'</string>
+    <string name="image_du_film">Image du film</string>
+    <string name="image_de_font_du_film">Image de font du film</string>
+    <string name="home_third">%1$s</string>
+    <string name="dashboard_second">%1$s</string>
+    <string name="title_dashboard_second">%1$s</string>
+    <string name="fonction4">Affichage du détail des films</string>
+    <string name="text_category">Actions et Aventures</string>
+    <string name="text_film_recycler">Actions et Aventures Actions et Aventures Actions et Aventures</string>
+    <string name="favorite">Favoris</string>
+    <string name="similar">Similar</string>
+    <string name="similar_movies">Similar movies</string>
 </resources>

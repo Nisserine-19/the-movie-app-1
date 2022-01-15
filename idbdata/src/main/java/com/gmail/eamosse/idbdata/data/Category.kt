@@ -1,3 +1,4 @@
+
 package com.gmail.eamosse.idbdata.data
 
 data class Category(
