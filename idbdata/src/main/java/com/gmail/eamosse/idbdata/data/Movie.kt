@@ -11,4 +11,5 @@ data class Movie(
     var title: String,
     var releaseDate: String,
     var overview: String?
+
 )

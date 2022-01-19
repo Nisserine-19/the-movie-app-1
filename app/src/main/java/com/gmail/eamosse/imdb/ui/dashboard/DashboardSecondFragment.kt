@@ -10,6 +10,8 @@ import com.bumptech.glide.Glide
 import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentDashboardSecondBinding
 import com.gmail.eamosse.imdb.ui.home.Titlechange
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,6 +52,7 @@ class DashboardSecondFragment : Fragment() {
                     binding.titre.text = itmovie.title
                     binding.resume.text = itmovie.overview
                     binding.dateSortie.text = itmovie.date
+                    binding.originalLanguage.text = itmovie.original_language
                     binding.rang.rating = itmovie.vote_average.toFloat() / 2
                     context?.let { it1 ->
                         Glide.with(it1)
@@ -95,6 +98,26 @@ class DashboardSecondFragment : Fragment() {
                             // afficher l'erreur
                         }
                     )
+                }
+            )
+
+            getVideo(args.idmovie.toInt())
+            video.observe(
+                viewLifecycleOwner,
+                { itvideo ->
+                    with(binding) {
+                        lifecycle.addObserver(bandeAnnonce)
+                        bandeAnnonce.addYouTubePlayerListener(object :
+                            AbstractYouTubePlayerListener() {
+                            override fun onReady(youTubePlayer: YouTubePlayer) {
+//                                        for (i in itvideo) {
+//                                            if (i.site == "Youtube") {
+                                youTubePlayer.loadVideo(itvideo[0].key, 0F)
+//                                            }
+//                                        }
+                            }
+                        })
+                    }
                 }
             )
         }

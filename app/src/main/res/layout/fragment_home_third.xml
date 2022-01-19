@@ -1,151 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".ui.home.HomeThirdFragment"
-            tools:ignore="MissingConstraints">
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
 
-            <ImageView
-                android:id="@+id/font_film"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:contentDescription="@string/image_de_font_du_film"
-                app:layout_constraintBottom_toBottomOf="@+id/font"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/vue_font"
-                android:layout_width="120dp"
-                android:layout_height="170dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
-                app:cardCornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/font"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/font">
-
-                <ImageView
-                    android:id="@+id/image_film"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/image_du_film" />
+                    android:layout_height="wrap_content"
+                    tools:context=".ui.home.HomeThirdFragment"
+                    tools:ignore="MissingConstraints">
 
-            </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/font_film"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:contentDescription="@string/image_de_font_du_film"
+                        app:layout_constraintBottom_toBottomOf="@+id/font"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/font"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.4" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/vue_font"
+                        android:layout_width="120dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/font"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/font">
 
-            <TextView
-                android:id="@+id/titre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/vue_font"
-                app:layout_constraintTop_toBottomOf="@id/font" />
+                        <ImageView
+                            android:id="@+id/image_film"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/image_du_film" />
 
-            <TextView
-                android:id="@+id/date_sortie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#757575"
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="@id/titre"
-                app:layout_constraintTop_toBottomOf="@id/titre" />
+                    </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrier"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="rang, date_sortie" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.4" />
 
-            <TextView
-                android:id="@+id/resume"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrier" />
+                    <TextView
+                        android:id="@+id/titre"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="15dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/vue_font"
+                        app:layout_constraintTop_toBottomOf="@id/font" />
 
-            <RatingBar
-                android:id="@+id/rang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@id/vue_font"
-                app:layout_constraintStart_toStartOf="@id/vue_font"
-                app:layout_constraintTop_toBottomOf="@id/vue_font" />
+                    <TextView
+                        android:id="@+id/date_sortie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#757575"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="@id/titre"
+                        app:layout_constraintTop_toBottomOf="@id/titre" />
 
-            <ToggleButton
-                android:id="@+id/toggle_favorite"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="16dp"
-                android:background="@drawable/favorite_toggle"
-                android:textOff=""
-                android:textOn=""
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/seasonImage"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@null"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintRight_toRightOf="@+id/runtime"
+                        app:layout_constraintTop_toTopOf="@+id/runtime"
+                        android:layout_marginLeft="247dp"
+                        app:srcCompat="@drawable/ic_baseline_access_time_24" />
 
-            <TextView
-                android:id="@+id/similar_txt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/similar"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/resume" />
+                    <TextView
+                        android:id="@+id/runtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="309dp"
+                        android:layout_marginTop="258dp"
+                        android:layout_marginEnd="44dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/temps"
+                        app:layout_constraintBottom_toBottomOf="@+id/font_film"
+                        app:layout_constraintEnd_toEndOf="@+id/font_film"
+                        app:layout_constraintStart_toStartOf="@+id/font_film"
+                        app:layout_constraintTop_toTopOf="@+id/font_film"/>
 
-            <TextView
-                android:id="@+id/similar_txt2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/similar_movies"
-                app:layout_constraintTop_toBottomOf="@id/similar_txt" />
+                    <ImageView
+                        android:id="@+id/airDateImage"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@null"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="247dp"
+                        app:layout_constraintTop_toTopOf="@+id/original_language"
+                        app:srcCompat="@drawable/ic_baseline_language_24"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/similar_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/similar_txt2"
-                tools:listitem="@layout/similar_list_item" />
+                    <TextView
+                        android:id="@+id/original_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="29dp"
+                        android:layout_marginEnd="116dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="270dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/runtime"
+                        app:layout_constraintVertical_bias="0.0" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="rang, date_sortie" />
+
+                    <TextView
+                        android:id="@+id/resume"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+                    <RatingBar
+                        android:id="@+id/rang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="@id/vue_font"
+                        app:layout_constraintStart_toStartOf="@id/vue_font"
+                        app:layout_constraintTop_toBottomOf="@id/vue_font" />
+
+                    <ToggleButton
+                        android:id="@+id/toggle_favorite"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/favorite_toggle"
+                        android:textOff=""
+                        android:textOn=""
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/similar_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/similar"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/resume" />
+
+                    <TextView
+                        android:id="@+id/similar_txt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/similar_movies"
+                        app:layout_constraintTop_toBottomOf="@id/similar_txt" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/similar_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="180dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/similar_txt2"
+                        tools:listitem="@layout/similar_list_item" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/bandeAnnonce"
+                    android:layout_width="match_parent"
+                    android:layout_height="197dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="180dp"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

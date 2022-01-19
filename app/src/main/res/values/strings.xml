@@ -39,4 +39,6 @@
     <string name="favorite">Favoris</string>
     <string name="similar">Similar</string>
     <string name="similar_movies">Similar movies</string>
+    <string name="temps">2:15 / 135 min</string>
+
 </resources>

@@ -175,5 +175,26 @@ internal class OnlineDataSource(private val service: MovieService) {
             )
         }
     }
+
+    suspend fun getVideo(Id: Int): Result<List<VideoResponse.Video>> {
+        return try {
+            val response = service.getVideo(Id)
+            if (response.isSuccessful) {
+                Result.Succes(response.body()!!.video)
+            } else {
+                Result.Error(
+                    exception = Exception(),
+                    message = response.message(),
+                    code = response.code()
+                )
+            }
+        } catch (e: Exception) {
+            Result.Error(
+                exception = e,
+                message = e.message ?: "No message",
+                code = -1
+            )
+        }
+    }
 }
 

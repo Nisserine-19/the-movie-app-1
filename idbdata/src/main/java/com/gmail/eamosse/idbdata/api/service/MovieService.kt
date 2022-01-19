@@ -34,4 +34,7 @@ internal interface MovieService {
 
     @GET("movie/{movie_id}/similar")
     suspend fun getSimilarMovies(@Path("movie_id") Id: Int): Response<PopularMoviesResponse>
+
+    @GET("movie/{movie_id}/videos")
+    suspend fun getVideo(@Path("movie_id") Id: Int): Response<VideoResponse>
 }

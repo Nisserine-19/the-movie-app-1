@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gmail.eamosse.idbdata.api.response.VideoResponse
 import com.gmail.eamosse.idbdata.data.DetailMovie
 import com.gmail.eamosse.idbdata.data.PopularMovies
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
@@ -18,6 +19,10 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
     private val _popularmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
     val popularmovies: LiveData<List<PopularMovies>>
         get() = _popularmovies
+
+    private val _video: MutableLiveData<List<VideoResponse.Video>> = MutableLiveData()
+    val video: LiveData<List<VideoResponse.Video>>
+        get() = _video
 
     private val _topratedmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
     val topratedmovies: LiveData<List<PopularMovies>>
@@ -70,6 +75,19 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
             when (val result = repository.getUpcomingMovies()) {
                 is Result.Succes -> {
                     _upcomingmovies.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
+        }
+    }
+
+    fun getVideo(Id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getVideo(Id)) {
+                is Result.Succes -> {
+                    _video.postValue(result.data)
                 }
                 is Result.Error -> {
                     _error.postValue(result.message)
