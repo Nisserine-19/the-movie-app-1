@@ -23,10 +23,13 @@ data class MoviesResponse(
 
         @SerializedName("title")
         var title: String,
+
         @SerializedName("video")
         val video: Boolean,
+
         @SerializedName("release_date")
         var releaseDate: String,
+
         @SerializedName("overview")
         var overview: String?
     )
