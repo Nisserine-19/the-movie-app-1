@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gmail.eamosse.idbdata.data.PopularMovies
 import com.gmail.eamosse.imdb.databinding.PopularListItemBinding
-import com.gmail.eamosse.imdb.ui.home.HomeSecondFragmentDirections
 
 class DashboardAdapter(private val items: List<PopularMovies>) :
     RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {

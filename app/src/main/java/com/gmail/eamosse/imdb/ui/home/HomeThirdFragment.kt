@@ -10,6 +10,8 @@ import com.bumptech.glide.Glide
 import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeThirdBinding
 import com.gmail.eamosse.imdb.ui.dashboard.DashboardAdapter
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,6 +22,7 @@ class HomeThirdFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
     private val args: HomeThirdFragmentArgs by navArgs()
     private lateinit var binding: FragmentHomeThirdBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,11 +31,13 @@ class HomeThirdFragment : Fragment() {
         // Inflate the layout for this fragment
         // return inflater.inflate(R.layout.fragment_home_second, container, false)
         binding = FragmentHomeThirdBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         with(homeViewModel) {
             getSimilarMovies(args.idmovie.toInt())
             similarmovies.observe(
@@ -51,11 +56,13 @@ class HomeThirdFragment : Fragment() {
                     binding.resume.text = itmovie.overview
                     binding.dateSortie.text = itmovie.date
                     binding.rang.rating = itmovie.vote_average.toFloat() / 2
+
                     context?.let { it1 ->
                         Glide.with(it1)
                             .load("https://image.tmdb.org/t/p/w500" + itmovie.poster_path)
                             .into(binding.imageFilm)
                     }
+
                     var _isChecked = false
                     CoroutineScope(Dispatchers.IO).launch {
                         val count = checkMovie(itmovie.id.toString())
@@ -78,6 +85,7 @@ class HomeThirdFragment : Fragment() {
                         }
                         binding.toggleFavorite.isChecked = _isChecked
                     }
+
                     context?.let { it1 ->
                         Glide.with(it1)
                             .load("https://image.tmdb.org/t/p/w1280" + itmovie.backdrop_path)
@@ -93,6 +101,26 @@ class HomeThirdFragment : Fragment() {
                         viewLifecycleOwner,
                         {
                             // afficher l'erreur
+                        }
+                    )
+
+                    getVideo(args.idmovie.toInt())
+                    video.observe(
+                        viewLifecycleOwner,
+                        { itvideo ->
+                            with(binding) {
+                                lifecycle.addObserver(bandeAnnonce)
+                                bandeAnnonce.addYouTubePlayerListener(object :
+                                    AbstractYouTubePlayerListener() {
+                                    override fun onReady(youTubePlayer: YouTubePlayer) {
+//                                        for (i in itvideo) {
+//                                            if (i.site == "Youtube") {
+                                                youTubePlayer.loadVideo(itvideo[0].key, 0F)
+//                                            }
+//                                        }
+                                    }
+                                })
+                            }
                         }
                     )
                 }

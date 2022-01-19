@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gmail.eamosse.idbdata.api.response.VideoResponse
 import com.gmail.eamosse.idbdata.data.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
@@ -40,6 +41,10 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
     private val _similarmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()
     val similarmovies: LiveData<List<PopularMovies>>
         get() = _similarmovies
+
+    private val _video: MutableLiveData<List<VideoResponse.Video>> = MutableLiveData()
+    val video: LiveData<List<VideoResponse.Video>>
+        get() = _video
 
     /**
      * Block d'initialisation du viewmodel
@@ -134,6 +139,19 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
             when (val result = repository.getSimilarMovies(Id)) {
                 is Result.Succes -> {
                     _similarmovies.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
+        }
+    }
+
+    fun getVideo(Id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getVideo(Id)) {
+                is Result.Succes -> {
+                    _video.postValue(result.data)
                 }
                 is Result.Error -> {
                     _error.postValue(result.message)

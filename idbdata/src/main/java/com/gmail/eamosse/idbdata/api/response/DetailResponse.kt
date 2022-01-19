@@ -1,5 +1,6 @@
 package com.gmail.eamosse.idbdata.api.response
 
+import com.gmail.eamosse.idbdata.data.Companie
 import com.gmail.eamosse.idbdata.data.DetailMovie
 import com.google.gson.annotations.SerializedName
 
@@ -19,8 +20,17 @@ internal data class DetailResponse(
     @SerializedName("backdrop_path")
     val backdrop_path: String?,
     @SerializedName("vote_average")
-    val vote_average: Number
-)
+    val vote_average: Number,
+//    @SerializedName("production_companies")
+//    val companies: List<Companie>
+) {
+    data class Companie(
+        @SerializedName("id")
+        val idComp: Long,
+        @SerializedName("name")
+        val name: String
+    )
+}
 
 internal fun DetailResponse.toDetailMovie() = DetailMovie(
     id = id,
@@ -32,3 +42,8 @@ internal fun DetailResponse.toDetailMovie() = DetailMovie(
     backdrop_path = backdrop_path,
     vote_average = vote_average
 )
+
+//internal fun DetailResponse.Companie.toDetailMovie() = Companie(
+//    idComp = idComp,
+//    name = name
+//)

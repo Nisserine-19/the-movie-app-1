@@ -39,4 +39,5 @@
     <string name="favorite">Favoris</string>
     <string name="similar">Similar</string>
     <string name="similar_movies">Similar movies</string>
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
 </resources>

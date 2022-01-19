@@ -9,4 +9,5 @@ data class DetailMovie(
     val poster_path: String,
     val backdrop_path: String?,
     val vote_average: Number
+//    val companies: List<Companie>
 )
