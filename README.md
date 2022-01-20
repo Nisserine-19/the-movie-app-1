@@ -64,17 +64,28 @@ Notre équipe est composée de :
 ## Captures d'écran des vues principales
 Voici les captures d'écran des vues principales :
 - La page d'accueil "Home" :
+
 ![271905313_928635881120924_5957247146511578862_n](https://user-images.githubusercontent.com/93370036/150416517-b6d9faff-b57f-4186-b066-67d2cdf4fd92.jpg)
+
 - La page avec la liste des films d'une catégorie :
+
 ![271640955_473162890872341_570587164281020192_n](https://user-images.githubusercontent.com/93370036/150416514-aa7eec8d-93fd-4bd0-b559-87111ff8e240.jpg)
+
 - Le page avec le détail d'un film :
+
 ![271748049_478587153879273_2664357021286134120_n](https://user-images.githubusercontent.com/93370036/150416524-9aab269c-8056-474e-9dd9-89c24807919e.jpg)
 ![271726736_648689389815488_3836486060359291585_n](https://user-images.githubusercontent.com/93370036/150416525-e574b595-4616-4332-8e9a-790327bfdb1d.jpg)
+
 - La page avec la liste des films "découverte" :
+
 ![271729609_644286820224935_2267847053115978208_n](https://user-images.githubusercontent.com/93370036/150416519-a5b8894e-4c4a-4d54-b564-e7bb3411c7e5.jpg)
+
 - La page des favoris :
+
 ![271921744_1264519574027873_5410307658121576991_n](https://user-images.githubusercontent.com/93370036/150416520-fb59a65a-960b-4292-9f22-055117ee437e.jpg)
+
 - La page 'A propos de nous' :
+
 ![271811004_623193265401704_5576232667990172331_n](https://user-images.githubusercontent.com/93370036/150416522-a99e00d6-27b3-4f85-9fcb-f0d5aa6e4c0c.jpg)
 ![271719184_1095770784591393_4946466142636953418_n](https://user-images.githubusercontent.com/93370036/150416527-419f2e7c-8f28-4643-b40e-d5fa59cbcff1.jpg)
 
