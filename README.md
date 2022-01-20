@@ -36,18 +36,36 @@ Techniquement, ce projet devrait nous permettre d'expérimenter de manière plus
 
 3. Afficher les films d'une catégorie. Les consignes sont par [ici](https://github.com/eamosse/the-movie-app/blob/master/movie_list.md)
 
-## Organisation
-- Groupes de 3 à 4 personnes
-- Commits, branches, et pull requests (il n'y aura pas de notes de groupe, le travail de chacun sera évalué principalement sur les commits) 
+## Fonctionnalités
+Voici la liste des fonctionnalités de notre application :
+- L'affichage des catégories de films.
+- L'affichage des films par catégorie.
+- L'affichage du détails des films avec :
+    - L'affiche du film.
+    - Le nom.
+    - La date de sortie.
+    - La durée.
+    - La langue.
+    - La note.
+    - Les compagnies de production.
+    - Le résumé.
+    - Les films similaires.
+    - Les bandes annonces (nous nous sommes fixées un nombre maximale de 3 bandes annonces).
+- La possibilité de mettre des films en favoris.
+- L'affichage des films favories
 
-## Rendu
-- Date limite : 30 Novembre 2021 (avant minuit) 
-- Modalités de rendu : Remplir le drive qui vous sera envoyé par mail
-- Ajouté un fichier readme dans lequel vous décrirez 
-    - Le contexte du projet et ses différentes fonctionnalités
-    - La liste des membres du groupe
-    - Captures d'écrans des principales vues 
-    - Vidéos de démonstration de l'application 
+## Membres du groupe
+Notre équipe est composée de :
+- Nisserine EZZAIMI
+- Tessir FAHMI ALI
+- Pauline GHIRLANDA
+- Adeline FEURTÉ
+
+## Captures d'écran des vues principales
+
+
+## Vidéo de démonstration
+Voici le lien vers la vidéo de démonstration de notre application :
 
 
 
