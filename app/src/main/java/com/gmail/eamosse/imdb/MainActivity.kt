@@ -12,7 +12,6 @@ import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.imdb.ui.home.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.youtube.player.YouTubeBaseActivity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject

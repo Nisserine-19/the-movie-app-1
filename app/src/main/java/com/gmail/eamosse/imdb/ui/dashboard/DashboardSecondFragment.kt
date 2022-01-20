@@ -51,6 +51,7 @@ class DashboardSecondFragment : Fragment() {
                     binding.titre.text = itmovie.title
                     binding.resume.text = itmovie.overview
                     binding.dateSortie.text = itmovie.date
+                    binding.runtime.text = itmovie.runtime.toString()+" min"
                     binding.originalLanguage.text = itmovie.original_language
                     binding.rang.rating = itmovie.vote_average.toFloat() / 2
                     context?.let { it1 ->
