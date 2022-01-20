@@ -26,7 +26,14 @@ class VideoAdapter(private val items: List<Video>) :
         return ViewHolder(RecyclerVideoYtBinding.inflate(inflater, parent, false))
     }
 
-    override fun getItemCount(): Int = items.size
+    private val limit = 3
+    override fun getItemCount(): Int {
+        return if (items.size > limit) {
+            limit
+        } else {
+            items.size
+        }
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.bind(items[position])
