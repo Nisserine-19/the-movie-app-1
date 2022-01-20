@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.gmail.eamosse.idbdata.api.response.VideoResponse
 import com.gmail.eamosse.idbdata.data.DetailMovie
 import com.gmail.eamosse.idbdata.data.PopularMovies
+import com.gmail.eamosse.idbdata.data.Video
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
 import com.gmail.eamosse.idbdata.utils.Result
@@ -20,8 +21,8 @@ class DashboardViewModel(private val repository: MovieRepository) : ViewModel() 
     val popularmovies: LiveData<List<PopularMovies>>
         get() = _popularmovies
 
-    private val _video: MutableLiveData<List<VideoResponse.Video>> = MutableLiveData()
-    val video: LiveData<List<VideoResponse.Video>>
+    private val _video: MutableLiveData<List<Video>> = MutableLiveData()
+    val video: LiveData<List<Video>>
         get() = _video
 
     private val _topratedmovies: MutableLiveData<List<PopularMovies>> = MutableLiveData()

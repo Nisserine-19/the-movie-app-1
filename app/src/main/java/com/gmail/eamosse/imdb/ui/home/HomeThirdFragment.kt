@@ -104,20 +104,8 @@ class HomeThirdFragment : Fragment() {
                     getVideo(args.idmovie.toInt())
                     video.observe(
                         viewLifecycleOwner,
-                        { itvideo ->
-                            with(binding) {
-                                lifecycle.addObserver(bandeAnnonce)
-                                bandeAnnonce.addYouTubePlayerListener(object :
-                                    AbstractYouTubePlayerListener() {
-                                    override fun onReady(youTubePlayer: YouTubePlayer) {
-//                                        for (i in itvideo) {
-//                                            if (i.site == "Youtube") {
-                                        youTubePlayer.loadVideo(itvideo[0].key, 0F)
-//                                            }
-//                                        }
-                                    }
-                                })
-                            }
+                        {
+                            binding.videoList.adapter = VideoAdapter(it)
                         }
                     )
                 }

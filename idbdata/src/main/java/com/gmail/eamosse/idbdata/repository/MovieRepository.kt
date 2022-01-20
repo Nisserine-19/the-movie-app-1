@@ -159,7 +159,7 @@ class MovieRepository : KoinComponent {
         }
     }
 
-    suspend fun getVideo(Id: Int): Result<List<VideoResponse.Video>> {
+    suspend fun getVideo(Id: Int): Result<List<Video>> {
         return when (val result = online.getVideo(Id)) {
             is Result.Succes -> {
                 // On utilise la fonction map pour convertir les catégories de la réponse serveur

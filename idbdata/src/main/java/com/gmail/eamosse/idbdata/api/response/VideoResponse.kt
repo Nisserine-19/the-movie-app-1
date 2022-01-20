@@ -1,5 +1,6 @@
 package com.gmail.eamosse.idbdata.api.response
 
+import com.gmail.eamosse.idbdata.data.Video
 import com.google.gson.annotations.SerializedName
 
 data class VideoResponse(
@@ -18,7 +19,7 @@ data class VideoResponse(
     )
 }
 
-internal fun VideoResponse.Video.toVideo() = VideoResponse.Video(
+internal fun VideoResponse.Video.toVideo() = Video(
     name = name,
     key = key,
     site = site

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gmail.eamosse.idbdata.api.response.VideoResponse
 import com.gmail.eamosse.idbdata.data.* // ktlint-disable no-wildcard-imports
 import com.gmail.eamosse.idbdata.local.entities.FavoriteEntity
 import com.gmail.eamosse.idbdata.repository.MovieRepository
@@ -22,8 +21,8 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
     val token: LiveData<Token>
         get() = _token
 
-    private val _video: MutableLiveData<List<VideoResponse.Video>> = MutableLiveData()
-    val video: LiveData<List<VideoResponse.Video>>
+    private val _video: MutableLiveData<List<Video>> = MutableLiveData()
+    val video: LiveData<List<Video>>
         get() = _video
 
     private val _categories: MutableLiveData<List<Category>> = MutableLiveData()
