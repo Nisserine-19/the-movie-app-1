@@ -10,8 +10,6 @@ import com.bumptech.glide.Glide
 import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.FragmentHomeThirdBinding
 import com.gmail.eamosse.imdb.ui.dashboard.DashboardAdapter
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -46,7 +44,6 @@ class HomeThirdFragment : Fragment() {
                 }
             )
 
-            // récupérer les catégories
             getDetailMovie(args.idmovie.toInt())
             movieDetail.observe(
                 viewLifecycleOwner,
@@ -74,6 +71,7 @@ class HomeThirdFragment : Fragment() {
                             }
                         }
                     }
+
                     binding.toggleFavorite.setOnClickListener {
                         _isChecked = !_isChecked
                         if (_isChecked) {
@@ -83,31 +81,40 @@ class HomeThirdFragment : Fragment() {
                         }
                         binding.toggleFavorite.isChecked = _isChecked
                     }
+
                     context?.let { it1 ->
                         Glide.with(it1)
                             .load("https://image.tmdb.org/t/p/w1280" + itmovie.backdrop_path)
                             .into(binding.fontFilm)
                     }
+
+                    var companiesTxt = ""
+                    for (j in itmovie.production_companies) {
+                        companiesTxt += j.name + "\n"
+                    }
+                    binding.companie.text = companiesTxt
+
                     (activity as? Titlechange)?.updateTitle(
                         getString(
                             R.string.home_third,
                             binding.titre.text
                         )
                     )
+
                     error.observe(
                         viewLifecycleOwner,
                         {
                             // afficher l'erreur
                         }
                     )
+                }
+            )
 
-                    getVideo(args.idmovie.toInt())
-                    video.observe(
-                        viewLifecycleOwner,
-                        {
-                            binding.videoList.adapter = VideoAdapter(it)
-                        }
-                    )
+            getVideo(args.idmovie.toInt())
+            video.observe(
+                viewLifecycleOwner,
+                {
+                    binding.videoList.adapter = VideoAdapter(it)
                 }
             )
         }

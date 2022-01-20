@@ -76,6 +76,7 @@ class DashboardSecondFragment : Fragment() {
                             }
                         }
                     }
+
                     binding.toggleFavorite.setOnClickListener {
                         _isChecked = !_isChecked
                         if (_isChecked) {
@@ -85,12 +86,20 @@ class DashboardSecondFragment : Fragment() {
                         }
                         binding.toggleFavorite.isChecked = _isChecked
                     }
+
+                    var companiesTxt = ""
+                    for (j in itmovie.production_companies) {
+                        companiesTxt += j.name + "\n"
+                    }
+                    binding.companie.text = companiesTxt
+
                     (activity as? Titlechange)?.updateTitle(
                         getString(
                             R.string.dashboard_second,
                             binding.titre.text
                         )
                     )
+
                     error.observe(
                         viewLifecycleOwner,
                         {

@@ -47,6 +47,4 @@ internal fun DetailResponse.toDetailMovie() = DetailMovie(
     production_companies = production_companies,
     runtime = runtime,
     original_language = original_language
-
-
 )

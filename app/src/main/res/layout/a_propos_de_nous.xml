@@ -4,12 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        android:fillViewport="true">
-
+        android:fillViewport="true"
+        android:layout_marginBottom="80dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +58,6 @@
                     android:src="@mipmap/ic_launcher_round"
                     android:contentDescription="@string/nisserine_ezzaimi" />
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -157,8 +157,6 @@
                     android:contentDescription="@string/adeline_feurte" />
             </LinearLayout>
 
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -167,14 +165,13 @@
                 android:textColor="#83ea96"
                 android:text="@string/lien_github"
                 android:textSize="18sp"
-                android:textStyle="bold">
+                android:textStyle="bold"/>
 
-            </TextView>
             <TextView
                 android:id="@+id/liengithub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/lien_git"
                 android:textSize="16sp"
@@ -191,9 +188,7 @@
                 android:textColor="#83ea96"
                 android:text="@string/resumeapp"
                 android:textSize="18sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/librairies2"
@@ -201,21 +196,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/themoviedbname"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:textColor="#83ea96"
                 android:text="@string/fonctionapp"
                 android:textSize="15sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/fonctionnalite1"
@@ -223,43 +217,56 @@
                 android:layout_height="wrap_content"
                 android:text="@string/fonction2"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
+
             <TextView
                 android:id="@+id/fonctionnalite2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fonction3"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:justificationMode="inter_word"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
+
             <TextView
                 android:id="@+id/fonctionnalite3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fonction4"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
+
             <TextView
-                android:id="@+id/fonctionnalite5"
+                android:id="@+id/fonctionnalite4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fonction5"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-
+            <TextView
+                android:id="@+id/fonctionnalite5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fonction6"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
         </LinearLayout>
     </ScrollView>
 

@@ -25,20 +25,24 @@
     <string name="resumeapp">Base de donnée utilisée pour l\'application AnneFlix :</string>
     <string name="themoviedbname">TheMovieDB</string>
     <string name="fonctionapp">La liste des fonctionnalités de notre application :</string>
-    <string name="fonction2">Affichage des catégories de film</string>
-    <string name="fonction3">Affichage des films par catégorie</string>
-    <string name="fonction5">Cette vue \'A propos de nous\'</string>
+    <string name="fonction2">- Affichage des catégories de films.</string>
+    <string name="fonction3">- Affichage des films par catégorie avec le détail de ces deniers. Cela comprends l\'affiche, le nom, la date de sortie, la durée, la langue, la note, les companies de production, le résumé, les films similaires et les bandes annonces (3 max) du film.</string>
+    <string name="fonction4">- Cette vue \'A propose de nous\'.</string>
+    <string name="fonction5">- La possibilité de mettre les films en favoris.</string>
+    <string name="fonction6">- Affichage des films favoris.</string>
     <string name="image_du_film">Image du film</string>
     <string name="image_de_font_du_film">Image de font du film</string>
     <string name="home_third">%1$s</string>
     <string name="dashboard_second">%1$s</string>
     <string name="title_dashboard_second">%1$s</string>
-    <string name="fonction4">Affichage du détail des films</string>
     <string name="text_category">Actions et Aventures</string>
     <string name="text_film_recycler">Actions et Aventures Actions et Aventures Actions et Aventures</string>
     <string name="favorite">Favoris</string>
     <string name="similar">Similar</string>
     <string name="similar_movies">Similar movies</string>
     <string name="temps">2:15 / 135 min</string>
+    <string name="production_company_companies">Production company/companies</string>
+    <string name="overview">Overview</string>
+    <string name="trailer_s">Trailer(s)</string>
 
 </resources>
