@@ -90,7 +90,4 @@ Voici les captures d'écran des vues principales :
 ![271719184_1095770784591393_4946466142636953418_n](https://user-images.githubusercontent.com/93370036/150416527-419f2e7c-8f28-4643-b40e-d5fa59cbcff1.jpg)
 
 ## Vidéo de démonstration
-Voici le lien vers la vidéo de démonstration de notre application :
-
-
-
+Voici le [lien](https://netestia-my.sharepoint.com/:v:/g/personal/p_ghirlanda_net_estia_fr/ERdeGC5-A89PjVScZIEsKqAB7cmv47mgX3hE98yh89EAxw?e=Uyp9eJ) vers la vidéo de démonstration de notre application.
